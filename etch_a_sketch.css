@@ -1,0 +1,15 @@
+.box {
+    border: 2px solid black;
+    min-width: 100px;
+    min-height: 100px;
+    color: red;
+}
+
+.div_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
