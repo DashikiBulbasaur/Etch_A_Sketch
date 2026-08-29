@@ -1,7 +1,5 @@
 .box {
     border: 2px solid black;
-    min-width: 10px;
-    min-height: 35px;
     color: red;
     flex-basis: calc((100% / 16) - 5px);
     box-sizing: border-box;
@@ -10,9 +8,7 @@
 .div_container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
     gap: 5px;
-    min-height: 100vh;
+    min-height: 98vh;
 }
