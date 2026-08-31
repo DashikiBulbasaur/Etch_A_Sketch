@@ -7,6 +7,6 @@ for (i = 0; i < 256; i++) {
     list_of_boxes.push(div);
     container.appendChild(div);
 }
-list_of_boxes.forEach(element => element.classList.add("box"));
+list_of_boxes.forEach(element => element.classList.add("box", "active-hover-effect"));
 
 document.body.appendChild(container);

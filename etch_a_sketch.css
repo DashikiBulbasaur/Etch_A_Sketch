@@ -12,3 +12,7 @@
     gap: 5px;
     min-height: 98vh;
 }
+
+.active-hover-effect:hover {
+    background-color: red;
+}
