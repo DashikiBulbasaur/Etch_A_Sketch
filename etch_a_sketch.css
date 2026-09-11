@@ -2,6 +2,8 @@
     border: 2px solid black;
     flex-basis: calc((100% / 16) - 2px);
     box-sizing: border-box;
+    opacity: 0.1;
+    transition: opacity 0.2s ease;
 }
 
 .div_container {

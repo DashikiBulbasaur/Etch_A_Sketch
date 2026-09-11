@@ -1,1 +1,2 @@
 # Etch_A_Sketch
+This is an etch a sketch project based on [project requirements from The Odin Project](https://www.theodinproject.com/lessons/foundations-etch-a-sketch). You can check out the project [here](https://dashikibulbasaur.github.io/Etch_A_Sketch/).

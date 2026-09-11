@@ -14,6 +14,25 @@ function createGrid(squarePerSide) {
     const colors = ["#FF007F", "#00F0FF", "#FFD700", "#7000FF", "#39FF14"];
     for (i = 0; i < (squarePerSide*squarePerSide); i++) {
         const div = document.createElement("div");
+
+        let lightness = 100;
+        div.addEventListener("mouseenter", () => {
+            const currentOpacity = window.getComputedStyle(div).opacity;
+
+            let opacityNum = parseFloat(currentOpacity);
+
+            if (opacityNum < 1) {
+                opacityNum += 0.1;
+            }
+
+            div.style.opacity = Math.min(opacityNum, 1).toFixed(1);
+
+            if (lightness > 0) {
+                lightness -= 10;
+                div.style.backgroundColor = `hsl(0, 0%, ${lightness}%)`;
+            }
+        });
+
         div.addEventListener("mousemove", (event) => {
             const dot = document.createElement("div");
             dot.className = "trail";
@@ -30,6 +49,7 @@ function createGrid(squarePerSide) {
                 dot.remove();
             }, 800);
         });
+        
         list_of_boxes.push(div);
         container.appendChild(div);
     }
