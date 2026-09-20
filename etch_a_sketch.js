@@ -15,6 +15,8 @@ function createGrid(squarePerSide) {
     for (i = 0; i < (squarePerSide*squarePerSide); i++) {
         const div = document.createElement("div");
 
+        div.style.opacity = 0.1;
+
         let lightness = 100;
         div.addEventListener("mouseenter", () => {
             const currentOpacity = window.getComputedStyle(div).opacity;
@@ -33,22 +35,29 @@ function createGrid(squarePerSide) {
             }
         });
 
-        div.addEventListener("mousemove", (event) => {
-            const dot = document.createElement("div");
-            dot.className = "trail";
-
-            const randomColor = colors[Math.floor(Math.random() * colors.length)];
-            dot.style.backgroundColor = randomColor;
-
-            dot.style.left = `${event.clientX}px`;
-            dot.style.top = `${event.clientY}px`;
-
-            document.body.appendChild(dot);
-
-            setTimeout(() => {
-                dot.remove();
-            }, 800);
+        div.addEventListener("mouseenter", (event) => {
+           const randomColor = colors[Math.floor(Math.random() * colors.length)];
+           div.style.backgroundColor = randomColor;
         });
+
+        // this is a mousemove event where the mouse leaves trails of random colors
+        // i thought this was the requirement at first
+        // div.addEventListener("mousemove", (event) => {
+        //     const dot = document.createElement("div");
+        //     dot.className = "trail";
+
+        //     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        //     dot.style.backgroundColor = randomColor;
+
+        //     dot.style.left = `${event.clientX}px`;
+        //     dot.style.top = `${event.clientY}px`;
+
+        //     document.body.appendChild(dot);
+
+        //     setTimeout(() => {
+        //         dot.remove();
+        //     }, 800);
+        // });
         
         list_of_boxes.push(div);
         container.appendChild(div);
